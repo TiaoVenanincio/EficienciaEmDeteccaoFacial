@@ -1,9 +1,14 @@
+#Algoritmo HaarCascade que utiliza menos recursos da máquina realizando o reconhecimento
+#a uma taxa de frames que pode ser determinada no código a baixo
+
 import cv2
 
 face_cascade =  cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 #carrega o algoritmo de haar cascade
 
 video = cv2.VideoCapture("Caso3.avi") #carrega o video
+
+taxa_deteccao = 10
 
 contador = 0
 while video.isOpened() and contador < 300:
@@ -12,7 +17,7 @@ while video.isOpened() and contador < 300:
     if not validacao:
             break
 
-    if contador % 20 == 0:    #define a quantos frames o reconhecimento será feito 
+    if contador % taxa_deteccao == 0:    #detecta com base na taxa estabelecida
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) #transforma o frame colorido em um frame em cinza 
 
         faces = face_cascade.detectMultiScale(gray, 1.1, 4) #detecta as faces no frame em escalas de cinza

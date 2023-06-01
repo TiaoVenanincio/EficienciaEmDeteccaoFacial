@@ -1,3 +1,5 @@
+#Esse algoritmo usa um HaarCascade para a detecção
+
 import cv2
 
 face_cascade =  cv2.CascadeClassifier('haarcascade_frontalface_default.xml')

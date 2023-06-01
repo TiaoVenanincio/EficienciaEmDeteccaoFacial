@@ -1,3 +1,5 @@
+#Esse algoritmo usa a biblioteca MediaPipe para a detecção
+
 import cv2
 import mediapipe as mp
 

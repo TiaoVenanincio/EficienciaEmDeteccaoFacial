@@ -1,3 +1,5 @@
+#Algoritmo utilizado para gravar os vídeos para teste
+
 import cv2
 
 webcam = cv2.VideoCapture(0) #conecta a webcam ao python
